@@ -25,20 +25,27 @@ slider.oninput = function() {
         
         output.innerHTML = ` Number of words = ${results.length} <br> <br> few random words  - <br><br> `
 
-        if(results.length<0){
+        if(results.length<=0){
             output.innerHTML += `lol no words `
 
         }
         else{
 
-            output.innerHTML += `${results[Math.floor(Math.random() * results.length)]},  `
-            
-            
-            
-            for (let i = 0; i < 6; i++) {
-                output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}, `
+            if(results.length<6){
+
+                output.innerHTML += results
             }
-            output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}`
+
+            else{
+                for (let i = 0; i < 6; i++) {
+                    output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}, `
+                }
+                output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]} `
+            }
+            
+            
+            
+            
         }
         
     
