@@ -1,4 +1,4 @@
-import { test, allWords } from './index.js';
+import { allWords } from './allWords.js';
 
 let slider = document.getElementById("myRange");
 let output = document.getElementById("result");
