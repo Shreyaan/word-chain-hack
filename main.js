@@ -7,20 +7,18 @@ let output = document.getElementById("result");
 let sliderOutput = document.getElementById("myRangeLable");
 let letter = document.getElementById("inputText")
 sliderOutput.innerHTML = slider.value;
+let cheatBtn = document.getElementById("cheat-btn")
 
-function button(element){
-let buttonHtml = `<span class=" btn-light"> ${element} </span> 
+function button(element) {
+    let buttonHtml = `<span class=" btn-light"> ${element} </span> 
 `
-// navigator.clipboard.writeText(element);
+    // navigator.clipboard.writeText(element);
 
-return buttonHtml
+    return buttonHtml
 }
 
 
-
-
-slider.oninput = function () {
-    sliderOutput.innerHTML = this.value;
+function gameCheat() {
     let letterVar = letter.value
     let smallLetter = letterVar.toLowerCase()
 
@@ -38,7 +36,7 @@ slider.oninput = function () {
     output.innerHTML = ` Number of words = ${results.length} <br>`
 
     if (results.length <= 0) {
-        
+
         output.innerHTML += `lol no words `
 
     } else {
@@ -54,7 +52,37 @@ slider.oninput = function () {
                 // output.innerHTML += `${results[Math.floor(Math.random() * results.length)]}, `
                 output.innerHTML += button(results[Math.floor(Math.random() * results.length)])
             }
-           
+
         }
     }
 }
+
+
+slider.oninput = function () {
+    sliderOutput.innerHTML = this.value;
+    gameCheat()
+}
+
+
+cheatBtn.addEventListener('click', function (event) {
+    event.preventDefault()
+    gameCheat()
+});
+
+
+function enterOnPress(event) {
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        cheatBtn.click();
+    }
+}
+
+letter.addEventListener("keyup", function (event) {
+    enterOnPress(event)
+});
+
+slider.addEventListener("keyup", function (event) {
+    enterOnPress(event)
+});
