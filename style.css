@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+    
+    margin: 50px;
+}
+
+.form{
+width: 100%;
+max-width: 60vw;
+}
+
+#result{
+    word-break: break;
+}
