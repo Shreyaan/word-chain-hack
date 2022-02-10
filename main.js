@@ -7,14 +7,16 @@ let sliderOutput = document.getElementById("myRangeLable");
 let letter= document.getElementById("inputText")
 sliderOutput.innerHTML = slider.value;
 
+
 slider.oninput = function() {
     sliderOutput.innerHTML = this.value;
-
-    if(letter.value != undefined){
-        output.innerHTML = letter.value
+    let letterVar= letter.value
+    let smallLetter = letterVar.toLowerCase()
+   
+        output.innerHTML = smallLetter
       
 
-        const startsWith = allWords.filter((country) => country.startsWith(letter.value));
+        const startsWith = allWords.filter((country) => country.startsWith(smallLetter));
         let results = [];
         for (const element of startsWith) {
             if(element.length >= slider.value){
@@ -44,5 +46,5 @@ slider.oninput = function() {
             output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}`
         }
         
-    }
+    
 }
