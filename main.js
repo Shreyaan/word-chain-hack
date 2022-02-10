@@ -1,5 +1,4 @@
 import { test, allWords } from './index.js';
-console.log(test)
 
 let slider = document.getElementById("myRange");
 let output = document.getElementById("result");
@@ -23,7 +22,6 @@ slider.oninput = function() {
                 results.push(element)
             }
         }
-        // output.innerHTML = startsWith[Math.floor(Math.random() * 20)]
         
         output.innerHTML = ` Number of words = ${results.length} <br> <br> few random words  - <br><br> `
 
@@ -34,15 +32,12 @@ slider.oninput = function() {
         else{
 
             output.innerHTML += `${results[Math.floor(Math.random() * results.length)]},  `
-            // let resultsWithComma =[]
             
             
             
             for (let i = 0; i < 6; i++) {
                 output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}, `
-                // resultsWithComma.push(results[Math.floor(Math.random() * results.length)])
             }
-            // output.innerHTML =  resultsWithComma
             output.innerHTML +=  `${results[Math.floor(Math.random() * results.length)]}`
         }
         
