@@ -23,10 +23,10 @@ slider.oninput = function() {
         }
         // output.innerHTML = startsWith[Math.floor(Math.random() * 20)]
         
-        output.innerHTML = ` Number of words = ${results.length} <br> <br> 5 random words  - <br><br> `
+        output.innerHTML = ` Number of words = ${results.length} <br> <br> few random words  - <br><br> `
 
         if(results.length<0){
-            output.innerHTML = `lol no words `
+            output.innerHTML += `lol no words `
 
         }
         else{
