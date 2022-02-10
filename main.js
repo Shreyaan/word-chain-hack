@@ -79,10 +79,14 @@ function enterOnPress(event) {
     }
 }
 
-letter.addEventListener("keyup", function (event) {
-    enterOnPress(event)
-});
+// letter.addEventListener("keyup", function (event) {
+//     enterOnPress(event)
+// });
 
-slider.addEventListener("keyup", function (event) {
+// slider.addEventListener("keyup", function (event) {
+//     enterOnPress(event)
+// });
+
+document.querySelector('body').addEventListener("keyup", function (event) {
     enterOnPress(event)
 });
