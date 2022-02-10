@@ -23,3 +23,7 @@ max-width: 60vw;
 #result{
     word-break: break;
 }
+
+button{
+    margin: 10px;
+}
