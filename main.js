@@ -9,7 +9,7 @@ let letter = document.getElementById("inputText")
 sliderOutput.innerHTML = slider.value;
 
 function button(element){
-let buttonHtml = `<button type="button" class="btn btn-dark"> ${element} </button> 
+let buttonHtml = `<span class=" btn-dark"> ${element} </span> 
 `
 // navigator.clipboard.writeText(element);
 
